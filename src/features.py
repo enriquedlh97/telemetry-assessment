@@ -14,7 +14,7 @@ def compute_telemetry_features(
     telemetry: pd.DataFrame,
     window_sizes: list[int],
 ) -> pd.DataFrame:
-    """Rolling statistics per sensor per window. Window sizes from ACF/PACF analysis."""
+    """Rolling statistics per sensor per window. Window sizes from train-only ACF/PACF analysis."""
     df: pd.DataFrame = telemetry.sort_values(["machineID", "datetime"]).copy()
     feature_cols: list[str] = []
 
